@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedAlert — Medication Reminder for Seniors</title>
+  <meta name="description" content="Never miss a dose. MedAlert is a simple, clear medication reminder app designed for seniors. No login, no clutter." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f9f9f9;
+      color: #1a1a1a;
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(160deg, #2E7D32 0%, #1B5E20 100%);
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 100px;
+    }
+
+    .hero-icon {
+      width: 100px;
+      height: 100px;
+      background: rgba(255,255,255,0.15);
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 28px;
+      font-size: 52px;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      opacity: 0.88;
+      max-width: 480px;
+      margin: 0 auto 40px;
+    }
+
+    .btn-store {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #fff;
+      color: #2E7D32;
+      font-size: 17px;
+      font-weight: 700;
+      padding: 16px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      transition: transform 0.15s;
+    }
+
+    .btn-store:hover { transform: translateY(-2px); }
+
+    .btn-store svg { width: 24px; height: 24px; }
+
+    /* ── Features ── */
+    .features {
+      max-width: 900px;
+      margin: -48px auto 0;
+      padding: 0 24px 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 28px 24px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .card-icon {
+      font-size: 36px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 8px;
+      color: #1a1a1a;
+    }
+
+    .card p {
+      font-size: 15px;
+      color: #555;
+    }
+
+    /* ── How it works ── */
+    .how {
+      background: #E8F5E9;
+      padding: 60px 24px;
+      text-align: center;
+    }
+
+    .how h2 {
+      font-size: 30px;
+      font-weight: 800;
+      color: #2E7D32;
+      margin-bottom: 48px;
+    }
+
+    .steps {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 32px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .step {
+      flex: 1;
+      min-width: 180px;
+      max-width: 220px;
+    }
+
+    .step-num {
+      width: 52px;
+      height: 52px;
+      background: #2E7D32;
+      color: #fff;
+      border-radius: 50%;
+      font-size: 22px;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+    }
+
+    .step h4 {
+      font-size: 16px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    /* ── CTA ── */
+    .cta {
+      text-align: center;
+      padding: 70px 24px;
+      background: #fff;
+    }
+
+    .cta h2 {
+      font-size: 30px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .cta p {
+      font-size: 17px;
+      color: #555;
+      margin-bottom: 32px;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #2E7D32;
+      color: #fff;
+      font-size: 18px;
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 4px 16px rgba(46,125,50,0.35);
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: #1a1a1a;
+      color: #aaa;
+      text-align: center;
+      padding: 32px 24px;
+      font-size: 14px;
+    }
+
+    footer a { color: #81C784; text-decoration: none; }
+    footer a:hover { text-decoration: underline; }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-icon">🔔</div>
+  <h1>MedAlert</h1>
+  <p>Simple, clear medication reminders designed for seniors. Never miss a dose.</p>
+  <a class="btn-store" href="https://play.google.com/store/apps/details?id=com.application.medalert" target="_blank">
+    <!-- Google Play icon -->
+    <svg viewBox="0 0 24 24" fill="#2E7D32" xmlns="http://www.w3.org/2000/svg">
+      <path d="M3.18 23.76c.37.21.8.22 1.18.03l12.47-7.2-2.65-2.65L3.18 23.76zM.5 1.5C.19 1.88 0 2.42 0 3.1v17.8c0 .68.19 1.22.5 1.6l.08.08 9.97-9.97v-.23L.58 1.42.5 1.5zM20.65 10.42l-2.8-1.62-2.96 2.96 2.96 2.96 2.81-1.62c.8-.46.8-1.22-.01-1.68zM4.36.21L16.83 7.4l-2.65 2.65L3.18.24C3.56.05 3.99.06 4.36.21z"/>
+    </svg>
+    Download on Google Play
+  </a>
+</section>
+
+<!-- Features -->
+<section class="features">
+  <div class="card">
+    <div class="card-icon">💊</div>
+    <h3>Simple to Set Up</h3>
+    <p>Add your medications in under 2 minutes. Choose a time, a colour, and you're done.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔔</div>
+    <h3>Persistent Reminders</h3>
+    <p>If you don't confirm, MedAlert reminds you again every 2 minutes — up to 4 times.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">✅</div>
+    <h3>One Tap to Confirm</h3>
+    <p>Large, clear buttons. Tap "Took it" and you're done. No menus, no confusion.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">📋</div>
+    <h3>Full Dose History</h3>
+    <p>See exactly which doses were taken, missed, or overdue — all in one clear list.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">🔒</div>
+    <h3>Private by Design</h3>
+    <p>No account, no internet, no data collection. Everything stays on your device.</p>
+  </div>
+  <div class="card">
+    <div class="card-icon">👴</div>
+    <h3>Built for Seniors</h3>
+    <p>Large text, large buttons, high contrast. Designed for adults 65+ as the primary user.</p>
+  </div>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <h2>How It Works</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>Add your medication</h4>
+      <p>Name, dose, time, and days of the week.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>Get reminded</h4>
+      <p>A notification appears at the right time — even on the lock screen.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>Tap "Took it"</h4>
+      <p>Confirm with one tap. MedAlert logs it and stops the reminders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <h2>Free for 7 days</h2>
+  <p>Try MedAlert free for a week. Unlock forever for a one-time fee — no subscription.</p>
+  <a class="btn-primary" href="https://play.google.com/store/apps/details?id=com.application.medalert" target="_blank">
+    Get MedAlert — Free
+  </a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-links">
+    <a href="privacy_policy.html">Privacy Policy</a>
+    <a href="mailto:sahandamith@gmail.com">Contact</a>
+    <a href="https://play.google.com/store/apps/details?id=com.application.medalert" target="_blank">Google Play</a>
+  </div>
+  &copy; 2026 MedAlert. All rights reserved.
+</footer>
+
+</body>
+</html>

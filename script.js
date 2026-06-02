@@ -11,23 +11,39 @@ navLinks?.querySelectorAll('a').forEach(link => {
   link.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-// Contact form — fake submit (replace with your backend/Formspree endpoint)
+// Contact form — submits to Formspree
 const form = document.getElementById('contactForm');
 const note = document.getElementById('formNote');
 
-form?.addEventListener('submit', (e) => {
+form?.addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = form.querySelector('button[type="submit"]');
   btn.disabled = true;
   btn.textContent = 'Sending…';
+  note.textContent = '';
 
-  // Swap this fetch() for a real endpoint, e.g. Formspree or your own API
-  setTimeout(() => {
-    note.textContent = "Thanks! We'll be in touch within one business day.";
-    form.reset();
-    btn.disabled = false;
-    btn.textContent = 'Send message →';
-  }, 1000);
+  try {
+    const res = await fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { Accept: 'application/json' },
+    });
+    if (res.ok) {
+      note.textContent = "Thanks! We'll be in touch within one business day.";
+      note.style.color = '';
+      form.reset();
+    } else {
+      const data = await res.json();
+      note.textContent = data?.errors?.map(e => e.message).join(', ') || 'Something went wrong. Please try again.';
+      note.style.color = '#c00';
+    }
+  } catch {
+    note.textContent = 'Network error. Please try again.';
+    note.style.color = '#c00';
+  }
+
+  btn.disabled = false;
+  btn.textContent = 'Send message →';
 });
 
 // Subtle scroll-reveal for cards and stats

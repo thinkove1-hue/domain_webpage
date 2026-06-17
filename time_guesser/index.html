@@ -177,9 +177,35 @@
                 width: 100%;
             }
         }
+
+        /* ── Nav ── */
+        .topnav {
+            position: sticky; top: 0; z-index: 100;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e5e7;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 0 24px; height: 56px;
+        }
+        .topnav-logo { font-size: 1rem; font-weight: 700; color: #667eea; text-decoration: none; }
+        .topnav-privacy {
+            font-size: 0.875rem; font-weight: 500;
+            color: #667eea; text-decoration: none;
+            border: 1px solid #667eea;
+            padding: 6px 16px; border-radius: 999px;
+            transition: background 0.2s, color 0.2s;
+        }
+        .topnav-privacy:hover { background: #667eea; color: #fff; }
     </style>
 </head>
 <body>
+
+<!-- Nav -->
+<nav class="topnav">
+  <a href="#" class="topnav-logo">Time Guesser</a>
+  <a href="privacy_policy.html" class="topnav-privacy">Privacy Policy</a>
+</nav>
+
     <div class="container">
         <header>
             <h1>⏰ Time Guesser</h1>

@@ -57,7 +57,7 @@
 
 <header>
   <h1>Time Guesser</h1>
-  <p>Privacy Policy &nbsp;·&nbsp; Effective date: June 18, 2026</p>
+  <p>Privacy Policy &nbsp;·&nbsp; Effective date: July 2, 2026</p>
 </header>
 
 <main>
@@ -80,14 +80,21 @@
         profile.
       </p>
       <p>
-        The app itself works <strong>fully offline</strong>. Your game history, statistics, and
-        settings are stored <strong>only on your device</strong> and are never transmitted to us or
-        to any server we operate. We do not run any backend and we receive none of your gameplay
-        data.
+        Most of the app works <strong>fully offline</strong>: your game history, statistics, and
+        settings are stored <strong>only on your device</strong> and are never transmitted anywhere.
       </p>
       <p>
-        The only data leaving your device is collected by our advertising partner, Google AdMob,
-        as described below.
+        The one exception is the <strong>Daily Challenge leaderboard</strong>. To show a ranked board
+        of everyone's result for the day, the app generates a random device identifier and a
+        randomly-generated display name (which you can change) the first time you open it. When you
+        complete the once-a-day challenge, this device identifier, display name, and that day's result
+        (which game was played and how close your guess was) are sent to our backend (Supabase) and
+        shown publicly on that day's leaderboard, ranked by accuracy. No other gameplay is uploaded —
+        practice rounds and local multiplayer games stay on your device.
+      </p>
+      <p>
+        The device identifier and display name are not linked to your real name, email, or any other
+        personal information, and there is no login or online account.
       </p>
     </section>
 
@@ -135,11 +142,16 @@
 
     <section>
       <h2>Third-Party Services</h2>
-      <p>The app uses the following third-party service:</p>
+      <p>The app uses the following third-party services:</p>
       <ul>
         <li>
           <strong>Google AdMob</strong> — advertising.
           <a href="https://policies.google.com/privacy" target="_blank">Privacy Policy</a>
+        </li>
+        <li>
+          <strong>Supabase</strong> — hosts the Daily Challenge leaderboard (device identifier,
+          display name, and daily results as described above).
+          <a href="https://supabase.com/privacy" target="_blank">Privacy Policy</a>
         </li>
       </ul>
     </section>
@@ -148,8 +160,12 @@
       <h2>Data Retention &amp; Deletion</h2>
       <p>
         <strong>On your device:</strong> your game history and stats stay on your device. They are
-        deleted when you uninstall the app or tap "Clear history" in the Statistics screen. Because
-        this data never leaves your device, there is nothing for us to delete on our side.
+        deleted when you uninstall the app or tap "Clear history" in the Statistics screen.
+      </p>
+      <p>
+        <strong>Daily leaderboard:</strong> your device identifier, display name, and daily results
+        are retained on our backend so the leaderboard remains viewable. To request deletion of this
+        data, contact us at the email below with your in-app display name.
       </p>
       <p>
         Advertising data handled by Google AdMob is governed by Google's own retention policies; see
